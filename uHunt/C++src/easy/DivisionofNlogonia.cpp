@@ -1,30 +1,29 @@
 using namespace std;
-#include <iostream>
-#include <cstdio>
+#include<cstdio>
+
+bool test=true;
 
 int main()
 {
-    int casos;cin >> casos;
+    if(test) freopen("../../data/easy/DivisionofNlogonia.in","r",stdin);
+
+    int x, y, xp, yp, casos;
+
+    scanf("%d",&casos);
     while(casos!=0)
     {
-        int x;cin >> x;
-        int y;cin >> y;
-
-        for(int i=0;i<casos;i++)
+        scanf("%d %d",&x,&y);
+        while(casos--)
         {
-            //int xp;cin >> xp;
-            //int yp;cin >> yp;
-            int xp,yp;
             scanf("%d %d",&xp,&yp);
 
-            if(xp==x||yp==y)cout << "divisa";
-            else if(xp>x&&yp>y)cout << "NE";
-            else if(xp<x&&yp>y)cout << "NO";
-            else if(xp<x&&yp<y)cout << "SO";
-            else if(xp>x&&yp<y)cout << "SE";
-            cout << endl;
+            if(xp==x||yp==y) printf("divisa\n");
+            else if(xp>x&&yp>y) printf("NE\n");
+            else if(xp<x&&yp>y) printf("NO\n");
+            else if(xp<x&&yp<y) printf("SO\n");
+            else if(xp>x&&yp<y) printf("SE\n");
         }
-        cin >> casos;
+        scanf("%d",&casos);
     }
     return 0;
 }

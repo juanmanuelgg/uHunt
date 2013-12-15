@@ -1,19 +1,22 @@
 using namespace std;
 #include <cstdio>
-#include <iostream>
 #include <algorithm>
+
+bool test=true;
 
 int main()
 {
-    int casos;cin >> casos;
+    if(test) freopen("../../data/easy/CostCutting.in","r",stdin);
+
+    int datos[3];
+    int casos;
+
+    scanf("%d",&casos);
     for(int i=0;i<casos;i++)
     {
-        int datos[3];
-        cin >> datos[0];
-        cin >> datos[1];
-        cin >> datos[2];
 
-        std::sort(datos,datos+3);
+        scanf("%d %d %d",&datos[0],&datos[1],&datos[2]);
+        sort(datos,datos+3);
 
         printf("Case %d: %d\n",(i+1),datos[1]);
     }
