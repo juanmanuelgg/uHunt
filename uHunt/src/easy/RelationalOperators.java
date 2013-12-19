@@ -1,4 +1,5 @@
 package easy;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -18,15 +19,18 @@ public class RelationalOperators
 		br.close();
 	}
 
-	private static void solucionarProblema() throws NumberFormatException, IOException 
+	private static void solucionarProblema() throws IOException 
 	{
-		int casos=Integer.parseInt(br.readLine());
-		for (int i = 0; i < casos;i++) 
+		int casos=Integer.parseInt(br.readLine()), num1, num2;
+		String[] param;
+		char rta;
+		
+		while(casos--!=0)
 		{
-			String[] param=br.readLine().split(" ");
-			int num1=Integer.parseInt(param[0]);
-			int num2=Integer.parseInt(param[1]);
-			char rta=(num1<num2)?'<':'>';
+			param=br.readLine().split(" ");
+			num1=Integer.parseInt(param[0]);
+			num2=Integer.parseInt(param[1]);
+			rta=(num1<num2)?'<':'>';
 			rta=(num1==num2)?'=':rta;
 			System.out.println(rta);
 		}

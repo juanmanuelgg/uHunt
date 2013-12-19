@@ -23,25 +23,30 @@ public class p487_3279
 		br.close();
 	}
 
-	private static void solucionarProblema() throws NumberFormatException, IOException
+	private static void solucionarProblema() throws IOException
 	{
-		int casos=Integer.parseInt(br.readLine());
-		for (int i = 0; i < casos; i++)
+		int casos=Integer.parseInt(br.readLine()), numNumeros;
+		SortedMap<String, Integer> numeros;
+		String numDef;
+		Integer freq;
+		boolean imp;
+		
+		for (int i=0; i<casos; i++)
 		{
 			br.readLine();
 			if(i>0) System.out.println();
 
-			int numNumeros=Integer.parseInt(br.readLine());
-			SortedMap<String, Integer> numeros=new TreeMap<String, Integer>();
-			for (int j = 0; j < numNumeros; j++)
+			numNumeros=Integer.parseInt(br.readLine());
+			numeros=new TreeMap<String, Integer>();
+			for (int j=0; j<numNumeros; j++)
 			{
-				String numDef=procesar(br.readLine());
+				numDef=procesar(br.readLine());
 				
-				Integer freq=numeros.get(numDef);
+				freq=numeros.get(numDef);
 				numeros.put(numDef, (freq==null)?1:freq+1);
 			}
 			
-			boolean imp=false;
+			imp=false;
 			for (Map.Entry<String, Integer> esteNum : numeros.entrySet())
 			{
 				if(esteNum.getValue()>1)

@@ -22,9 +22,11 @@ public class SaveSetu
 	private static void solve() throws NumberFormatException, IOException
 	{
 		int casos=Integer.parseInt(br.readLine()), total=0;
-		for (int i = 0; i < casos; i++)
+		String[] comando;
+		
+		while(casos--!=0)
 		{
-			String[] comando=br.readLine().split(" ");
+			comando=br.readLine().split(" ");
 			if(comando[0].equals("donate")) total+=Integer.parseInt(comando[1]);
 			else System.out.println(total);
 		}

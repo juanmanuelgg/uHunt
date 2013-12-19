@@ -21,12 +21,15 @@ public class TeXQuotes
 
 	private static void solve() throws IOException
 	{
-		int cont=0;
 		String linea=br.readLine();
+		int cont=0;
+		char[] aux;
+		String resp;
+		
 		while(linea!=null)
 		{
-			char[] aux=linea.toCharArray();
-			String resp="";
+			aux=linea.toCharArray();
+			resp="";
 			for (char c : aux)
 			{
 				if(c=='"') resp+=(cont++%2==0)?"``":"''";

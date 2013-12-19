@@ -23,11 +23,13 @@ public class AndysFirstDictionary
 	private static void solve() throws IOException
 	{		
 		SortedSet<String> palabras=new TreeSet<String>();
-		String linea=br.readLine();
+		String linea=br.readLine(), aux;
+		char[]letras;
+		
 		while(linea!=null)
 		{
-			String aux="";
-			char[] letras=linea.toCharArray();
+			aux="";
+			letras=linea.toCharArray();
 			for (char c : letras)
 			{
 				if(Character.isLetter(c)) aux+=Character.toLowerCase(c);

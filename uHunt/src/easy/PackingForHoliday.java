@@ -21,13 +21,15 @@ public class PackingForHoliday
 
 	private static void solve() throws NumberFormatException, IOException
 	{
-		int casos=Integer.parseInt(br.readLine());
-		for (int i = 1; i <= casos; i++)
+		int casos=Integer.parseInt(br.readLine()), L, W, H;
+		String[] aux;
+		
+		for (int i=1; i<=casos; i++)
 		{
-			String[] aux=br.readLine().split(" ");
-			int L=Integer.parseInt(aux[0]);
-			int W=Integer.parseInt(aux[1]);
-			int H=Integer.parseInt(aux[2]);
+			aux=br.readLine().split(" ");
+			L=Integer.parseInt(aux[0]);
+			W=Integer.parseInt(aux[1]);
+			H=Integer.parseInt(aux[2]);
 			
 			System.out.print("Case "+i+": ");
 			if(L<=20 && W<=20 && H<=20) System.out.println("good");

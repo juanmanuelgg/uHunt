@@ -21,26 +21,32 @@ public class TheSnail
 
 	private static void solucionarProblema() throws IOException
 	{
-		String linea=br.readLine();
+		String linea=br.readLine(), r1;
+		int H, U, D, F;
+		double i, posSnail, subida;
+		String[] param;
+		
 		while(!linea.equals("0 0 0 0"))
 		{
-			String[] param=linea.split(" ");
-			int H=Integer.parseInt(param[0]);
-			int U=Integer.parseInt(param[1]);
-			int D=Integer.parseInt(param[2]);
-			int F=Integer.parseInt(param[3]);
+			param=linea.split(" ");
+			H=Integer.parseInt(param[0]);
+			U=Integer.parseInt(param[1]);
+			D=Integer.parseInt(param[2]);
+			F=Integer.parseInt(param[3]);
 			
-			double i=1,posSnail=0;
+			i=1;
+			posSnail=0;
+			
 			while(true)
 			{
-				double subida=(U-(U*(i-1)*F/100));
+				subida=(U-(U*(i-1)*F/100));
 				posSnail+=(subida>=0)?subida:0;
 				if(posSnail>H)break;
 				posSnail-=D;
 				if(posSnail<0)break;
 				i++;
 			}
-			String r1=(posSnail<0)?"failure":"success";
+			r1=(posSnail<0)?"failure":"success";
 			
 			System.out.println(r1+" on day "+(int)i);
 			linea=br.readLine();

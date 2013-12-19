@@ -23,26 +23,24 @@ public class bender
 	private static void solucionarProblema() throws IOException
 	{
 		String linea=br.readLine();
+		String[] instrucciones;
+		String rta;
+		int pos;
+		
 		while(!linea.equals("0"))
 		{
-			String[] instrucciones=br.readLine().split(" ");
+			instrucciones=br.readLine().split(" ");
 			
-			String rta=solucionarCaso(instrucciones);
+			pos=0;
+			for (String instruc : instrucciones) 
+				if(!instruc.equals("No")) pos=map[pos][map_l_n(instruc)];
+			
+			rta=map_n_l(pos);
 			System.out.println(rta);
 			linea=br.readLine();
 		}
 	}
 
-	private static String solucionarCaso(String[] instrucciones)
-	{
-		int pos=0;
-		for (int i = 0; i < instrucciones.length; i++)
-		{
-			if(!instrucciones[i].equals("No")) pos=map[pos][map_l_n(instrucciones[i])];
-		}
-		return map_n_l(pos);
-	}
-	
 	private static int map_l_n(String l)
 	{
 		if(l.equals("+x"))return 0;

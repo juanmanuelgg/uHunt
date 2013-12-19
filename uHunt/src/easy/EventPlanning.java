@@ -1,4 +1,5 @@
 package easy;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -21,29 +22,27 @@ public class EventPlanning
 	private static void solucionarProblema() throws IOException
 	{
 		String linea=br.readLine();
+		int numParticip, budget, numHoteles, minGasto, precio, gasto;
+		String[] paramEvento, camasDisp;
+
 		while(linea!=null)
 		{
-			String[] paramEvento=linea.split(" ");
-			int numParticip=Integer.parseInt(paramEvento[0]);
-			int budget=Integer.parseInt(paramEvento[1]);
-			int numHoteles=Integer.parseInt(paramEvento[2]);
-			int numWeeks=Integer.parseInt(paramEvento[3]);
+			paramEvento=linea.split(" ");
+			numParticip=Integer.parseInt(paramEvento[0]);
+			budget=Integer.parseInt(paramEvento[1]);
+			numHoteles=Integer.parseInt(paramEvento[2]);
+			minGasto=-1;
 
-			int minGasto=-1;
-			// Solucionar Caso
-			for (int i = 0; i < numHoteles; i++) 
+			while (numHoteles--!=0) 
 			{
-				int precio=Integer.parseInt(br.readLine());
-				String[] camasDisp=br.readLine().split(" ");
+				precio=Integer.parseInt(br.readLine());
+				camasDisp=br.readLine().split(" ");
 
-				int gasto=precio*numParticip;
-				for (int j = 0; j < numWeeks; j++)
+				gasto=precio*numParticip;
+				for (String camas : camasDisp) 
 				{
-					int beds=Integer.parseInt(camasDisp[j]);
-					if(gasto<=budget && beds>=numParticip)
-					{
-						if(gasto<minGasto || minGasto==-1)minGasto=gasto;
-					}
+					int beds=Integer.parseInt(camas);
+					if(gasto<=budget && beds>=numParticip && (gasto<minGasto||minGasto==-1)) minGasto=gasto;					
 				}
 			}
 

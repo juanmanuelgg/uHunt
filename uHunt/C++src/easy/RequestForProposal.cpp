@@ -29,7 +29,7 @@ int main()
             cin >> props[j].numReqCumlplidos;
 
             int auxl=props[j].numReqsCumplidos;
-            if(props[j].numReqCumlplidos>maxReqsCumplidos)maxReqsCumplidos=props[j].numReqCumlplidos;}
+            if(props[j].numReqCumlplidos>maxReqsCumplidos) maxReqsCumplidos=props[j].numReqCumlplidos;}
 
             string reqcumple;
             for (int k = 0; k < auxl ; k++)getline(cin,reqcumple);

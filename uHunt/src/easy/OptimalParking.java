@@ -21,17 +21,19 @@ public class OptimalParking
 
 	private static void solve() throws IOException
 	{
-		int casos=Integer.parseInt(br.readLine());
-		for (int i = 0; i < casos; i++)
+		int casos=Integer.parseInt(br.readLine()), menor, mayor, este;
+		String[] aux;
+		
+		while(casos--!=0)
 		{
 			br.readLine();
-			String[] aux=br.readLine().split(" ");
+			aux=br.readLine().split(" ");
 
-			int menor=99;
-			int mayor=0;
-			for (int j = 0; j < aux.length; j++)
+			menor=99;
+			mayor=0;
+			for (String str : aux)
 			{
-				int este=Integer.parseInt(aux[j]);
+				este=Integer.parseInt(str);
 				if(este>mayor) mayor=este;
 				if(este<menor) menor=este;
 			}

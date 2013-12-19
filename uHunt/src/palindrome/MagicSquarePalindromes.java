@@ -21,29 +21,35 @@ public class MagicSquarePalindromes
 
 	private static void solve() throws IOException 
 	{
-		int casos=Integer.parseInt(br.readLine());
-		for (int cs = 1; cs <= casos ; cs++)
+		int casos=Integer.parseInt(br.readLine()), lado;
+		char[] linea, letras;
+		double aux;
+		boolean palindromo;
+		String filtro1, pal1, pal2, pal3, pal4;
+		char[][] matriz;
+		
+		for (int cs=1; cs<=casos ; cs++)
 		{
-			String filtro1="";
-			char[] linea=br.readLine().toCharArray();
+			filtro1="";
+			linea=br.readLine().toCharArray();
 			for (char c : linea) if(c>=97 && c<=122) filtro1+=c;
 
-			char[] letras=filtro1.toCharArray();
-			double aux=Math.sqrt(filtro1.length());
-			int lado=(int) aux;
-			boolean palindromo=true;
+			letras=filtro1.toCharArray();
+			aux=Math.sqrt(filtro1.length());
+			lado=(int)aux;
+			palindromo=true;
 			
 			if(aux%1==0)
 			{
-				char[][] matriz=new char[lado][lado];
+				matriz=new char[lado][lado];
 
-				for (int i = 0; i < lado; i++)
-					for (int j = 0; j < lado; j++) matriz[i][j]=letras[(i*lado)+j];
+				for (int i=0; i<lado; i++)
+					for (int j=0; j<lado; j++) matriz[i][j]=letras[(i*lado)+j];
 
-				for (int i = 0; i < lado && palindromo; i++) 
+				for (int i=0; i<lado && palindromo; i++) 
 				{
-					String pal1="",pal2="",pal3="",pal4="";
-					for (int j = 0; j < lado ; j++) 
+					pal1=pal2=pal3=pal4="";
+					for (int j=0; j<lado ; j++) 
 					{
 						pal1+=matriz[i][j];
 						pal2+=matriz[j][i];

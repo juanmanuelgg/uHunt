@@ -21,27 +21,21 @@ public class AllinAll
 	private static void solve() throws IOException
 	{
 		String linea=br.readLine();
+		char[] S,T;
+		
 		while(linea!=null)
 		{
 			String[] aux=linea.split(" ");
-			char[] S=aux[0].toCharArray();
-			char[] T=aux[1].toCharArray();
+			S=aux[0].toCharArray();
+			T=aux[1].toCharArray();
 			
-			String rta=(solucionarCaso(S,T))?"Yes":"No";
+			int j=0;
+			for (int i=0; i<T.length && j<S.length; i++) if(S[j]==T[i]) j++;
+			String rta=(j==S.length)?"Yes":"No";
 			
 			System.out.println(rta);
 			linea=br.readLine();
 		}
-	}
-
-	private static boolean solucionarCaso(char[] S, char[]T)
-	{
-		int j=0;
-		for (int i = 0; i < T.length && j <S.length; i++)
-		{
-			if(S[j]==T[i]) j++;
-		}
-		return (j==S.length);
 	}
 	
 }

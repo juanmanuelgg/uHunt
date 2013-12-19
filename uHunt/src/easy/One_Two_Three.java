@@ -21,23 +21,21 @@ public class One_Two_Three
 
 	private static void solve() throws IOException
 	{
-		char[] one={'o','n','e'};
-		int casos=Integer.parseInt(br.readLine()), rta=0, num1=0;
+		char[] one={'o','n','e'} ,letras;
+		int casos=Integer.parseInt(br.readLine()), num1=0;
 		
-		for (int i = 0; i < casos; i++)
+		while(casos--!=0)
 		{
-			char[] letras=br.readLine().toCharArray();
+			letras=br.readLine().toCharArray();
 			
-			if(letras.length==5) rta=3;
+			if(letras.length==5) System.out.println(3);
 			else
 			{
 				num1=0; 
 				for (int j=0; j<letras.length; j++) if(letras[j]==one[j]) num1++;
-				if(num1>=2)rta=1;
-				else rta=2;
+				if(num1>=2) System.out.println(1);
+				else System.out.println(2);
 			}
-			
-			System.out.println(rta);
 		}
 	}
 	

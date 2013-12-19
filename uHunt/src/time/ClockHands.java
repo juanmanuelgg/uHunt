@@ -22,16 +22,19 @@ public class ClockHands
 	private static void solve() throws IOException
 	{
 		String linea=br.readLine();
+		String[] param;
+		double horas, minutos, gradosMinutos, gradosHoras, dif;
+		
 		while(!linea.equals("0:00"))
 		{
-			String[] param=linea.split(":");
-			double horas=Double.parseDouble(param[0]);
-			double minutos=Double.parseDouble(param[1]);
+			param=linea.split(":");
+			horas=Double.parseDouble(param[0]);
+			minutos=Double.parseDouble(param[1]);
 		
-			double gradosMinutos=(minutos*360/60);
-			double gradosHoras=((horas*360/12)+(minutos*30/60));
+			gradosMinutos=(minutos*360/60);
+			gradosHoras=((horas*360/12)+(minutos*30/60));
 			
-			double dif=Math.abs(gradosHoras-gradosMinutos);
+			dif=Math.abs(gradosHoras-gradosMinutos);
 			dif=(dif>180)?360-dif:dif;
 			
 			System.out.printf("%.3f\n", dif);

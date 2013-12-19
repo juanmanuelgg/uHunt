@@ -24,18 +24,22 @@ public class Babelfish
 	{
 		String linea=br.readLine();
 		Map<String, String> diccionario=new HashMap<String, String>();
+		String[] aux;
+		
 		while(!linea.equals(""))
 		{
-			String[] aux=linea.split(" ");
+			aux=linea.split(" ");
 			diccionario.put(aux[1], aux[0]);
 
 			linea=br.readLine();
 		}
 
 		linea=br.readLine();
+		String rta;
+		
 		while(linea!=null)
 		{
-			String rta=(diccionario.get(linea)!=null)?diccionario.get(linea):"eh";
+			rta=(diccionario.get(linea)!=null)?diccionario.get(linea):"eh";
 			System.out.println(rta);
 			linea=br.readLine();
 		}

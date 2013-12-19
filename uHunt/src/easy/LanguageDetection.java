@@ -21,7 +21,8 @@ public class LanguageDetection
 
 	private static void solve() throws IOException
 	{
-		String linea=br.readLine(),rta="";
+		String linea=br.readLine(), rta="";
+		
 		for(int i=1;!linea.equals("#");i++)
 		{
 			if(linea.contains("HELLO"))rta="ENGLISH";

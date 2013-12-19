@@ -21,22 +21,26 @@ public class MotherBear
 
 	private static void solve() throws IOException 
 	{
-		String linea=br.readLine();
+		String linea=br.readLine(), filtro1;
+		char[] letras, filtrado;
+		int tam;
+		boolean palindroma;
+		
 		while(!linea.equals("DONE"))
 		{
-			char[] letras=linea.toCharArray();
-			String filtro1="";
+			letras=linea.toCharArray();
+			filtro1="";
 			for (char c : letras) 
 			{
 				if(c>=65 && c<=90) filtro1+=(char)(c+32);
 				else if(c>=97 && c<=122) filtro1+=c;
 			}
 
-			boolean palindroma=true;
-			char[] filtrado=filtro1.toCharArray();
-			int tam=filtrado.length;
+			palindroma=true;
+			filtrado=filtro1.toCharArray();
+			tam=filtrado.length;
 			
-			for (int i = 0; i < tam/2 && palindroma; i++) 
+			for (int i=0; i<tam/2 && palindroma; i++) 
 				if(filtrado[i]!=filtrado[tam-i-1]) palindroma=false;
 
 			String rta=(palindroma)?"You won't be eaten!":"Uh oh..";

@@ -22,10 +22,12 @@ public class EmoogleBalance
 	private static void solve() throws IOException
 	{
 		int numMax=Integer.parseInt(br.readLine().trim()), numCeros=0;
+		String[] caso;
+		
 		for (int i = 1; numMax!=0 ; i++)
 		{
 			numCeros=0;
-			String[] caso=br.readLine().trim().split(" ");
+			caso=br.readLine().trim().split(" ");
 			for (String cadena : caso) if(cadena.equals("0")) numCeros++;
 			
 			System.out.println("Case "+i+": "+(numMax-(2*numCeros)));

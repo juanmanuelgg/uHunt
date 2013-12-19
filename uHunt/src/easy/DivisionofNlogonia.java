@@ -18,14 +18,17 @@ public class DivisionofNlogonia
 		br.close();
 	}
 
-	private static void solucionarProblema() throws NumberFormatException, IOException 
+	private static void solucionarProblema() throws IOException 
 	{
 		int numPuntos=Integer.parseInt(br.readLine());
+		String puntoCentro;
+		String[] puntos;
+		
 		while(numPuntos!=0)
 		{
-			String puntoCentro=br.readLine();
-			String[] puntos=new String[numPuntos];
-			for (int i = 0; i < numPuntos; i++)puntos[i]=br.readLine();
+			puntoCentro=br.readLine();
+			puntos=new String[numPuntos];
+			for (int i=0; i<numPuntos; i++) puntos[i]=br.readLine();
 			
 			solucionarCaso(puntoCentro.split(" "), puntos);
 			
@@ -35,12 +38,14 @@ public class DivisionofNlogonia
 
 	private static void solucionarCaso(String[] puntoCentro, String[] puntos) 
 	{
-		int x=Integer.parseInt(puntoCentro[0]),y=Integer.parseInt(puntoCentro[1]);
+		int x=Integer.parseInt(puntoCentro[0]), y=Integer.parseInt(puntoCentro[1]), xp, yp;
+		String[] estePunto;
+		
 		for (String punto : puntos)
 		{
-			String[] estePunto=punto.split(" ");
-			int xp=Integer.parseInt(estePunto[0]);
-			int yp=Integer.parseInt(estePunto[1]);
+			estePunto=punto.split(" ");
+			xp=Integer.parseInt(estePunto[0]);
+			yp=Integer.parseInt(estePunto[1]);
 			
 			if(xp==x||yp==y)System.out.println("divisa");
 			else if(xp>x&&yp>y)System.out.println("NE");

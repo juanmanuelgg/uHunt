@@ -21,17 +21,19 @@ public class HorrorDash
 
 	private static void solucionarProblema() throws NumberFormatException, IOException 
 	{
-		int casos=Integer.parseInt(br.readLine());
-		for (int i = 0; i < casos ; i++)
+		int casos=Integer.parseInt(br.readLine()), max, vel;
+		String[] param;
+		
+		for (int i=1; i<=casos ; i++)
 		{
-			String[] param=br.readLine().split(" ");
-			int max=0;
+			param=br.readLine().split(" ");
+			max=0;
 			for (int j = 1; j < param.length; j++)
 			{
-				int vel=Integer.parseInt(param[j]);
-				if(vel>max)max=vel;		
+				vel=Integer.parseInt(param[j]);
+				if(vel>max) max=vel;		
 			}
-			System.out.println("Case "+(i+1)+": "+max);
+			System.out.println("Case "+i+": "+max);
 		}
 	}
 	

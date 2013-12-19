@@ -21,16 +21,19 @@ public class CostCutting
 		br.close();
 	}
 
-	private static void solucionarProblema() throws NumberFormatException, IOException 
+	private static void solucionarProblema() throws IOException 
 	{
 		int casos=Integer.parseInt(br.readLine());
-		for (int i = 0; i < casos;i++) 
+		String[] param;
+		List<Integer> lol=new ArrayList<Integer>();
+		
+		for (int i=0; i<casos; i++) 
 		{
-			String[] param=br.readLine().split(" ");
-			List<Integer> lol=new ArrayList<Integer>();
-			for (String string : param)lol.add(Integer.parseInt(string));
+			param=br.readLine().split(" ");
+			for (String string : param) lol.add(Integer.parseInt(string));
 			Collections.sort(lol);
 			System.out.println("Case "+(i+1)+": "+lol.get(1));
+			lol.clear();
 		}
 	}
 	

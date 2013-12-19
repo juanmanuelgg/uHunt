@@ -22,6 +22,7 @@ public class Hajj_e_Akbar
 	private static void solve() throws IOException
 	{
 		String linea=br.readLine();
+		
 		for(int i=1;!linea.equals("*");i++)
 		{
 			System.out.print("Case "+i+": ");
