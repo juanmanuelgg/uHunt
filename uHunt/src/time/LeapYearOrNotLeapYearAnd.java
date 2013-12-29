@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
 
+//ID: 10070
 public class LeapYearOrNotLeapYearAnd
 {
 	private static BufferedReader br;

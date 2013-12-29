@@ -24,12 +24,11 @@ public class CostCutting
 	private static void solucionarProblema() throws IOException 
 	{
 		int casos=Integer.parseInt(br.readLine());
-		String[] param;
 		List<Integer> lol=new ArrayList<Integer>();
 		
 		for (int i=0; i<casos; i++) 
 		{
-			param=br.readLine().split(" ");
+			String[] param = br.readLine().split(" ");
 			for (String string : param) lol.add(Integer.parseInt(string));
 			Collections.sort(lol);
 			System.out.println("Case "+(i+1)+": "+lol.get(1));

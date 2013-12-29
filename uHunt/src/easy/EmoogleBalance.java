@@ -1,5 +1,6 @@
 package easy;
 
+//ID: 12279
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,12 +23,11 @@ public class EmoogleBalance
 	private static void solve() throws IOException
 	{
 		int numMax=Integer.parseInt(br.readLine().trim()), numCeros=0;
-		String[] caso;
 		
-		for (int i = 1; numMax!=0 ; i++)
+		for (int i=1; numMax!=0 ; i++)
 		{
 			numCeros=0;
-			caso=br.readLine().trim().split(" ");
+			String[] caso=br.readLine().trim().split(" ");
 			for (String cadena : caso) if(cadena.equals("0")) numCeros++;
 			
 			System.out.println("Case "+i+": "+(numMax-(2*numCeros)));

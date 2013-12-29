@@ -21,15 +21,14 @@ public class AutomaticAnswer
 
 	private static void solve() throws IOException
 	{
-		int casos=Integer.parseInt(br.readLine()), num;
-		char[] digitos;
+		int casos=Integer.parseInt(br.readLine());
 		
 		while(casos--!=0)
 		{
-			num=Integer.parseInt(br.readLine());
+			int num = Integer.parseInt(br.readLine());
 			num=((((num*63)+7492)*5)-498);
 			
-			digitos=(num+"").toCharArray();
+			char[] digitos = (num+"").toCharArray();
 			
 			System.out.println(digitos[digitos.length-2]);
 		}

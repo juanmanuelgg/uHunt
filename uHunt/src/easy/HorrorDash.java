@@ -1,5 +1,6 @@
 package easy;
 
+//ID: 11799
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -15,11 +16,11 @@ public class HorrorDash
 	{
 		if(test)br=new BufferedReader(new FileReader(new File("./data/easy/HorrorDash.in")));
 		else br=new BufferedReader(new InputStreamReader(System.in));
-		solucionarProblema();
+		solve();
 		br.close();
 	}
 
-	private static void solucionarProblema() throws NumberFormatException, IOException 
+	private static void solve() throws IOException 
 	{
 		int casos=Integer.parseInt(br.readLine()), max, vel;
 		String[] param;

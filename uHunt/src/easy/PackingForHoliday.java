@@ -1,5 +1,6 @@
 package easy;
 
+//ID: 12372
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -36,4 +37,5 @@ public class PackingForHoliday
 			else System.out.println("bad");
 		}
 	}
+	
 }
