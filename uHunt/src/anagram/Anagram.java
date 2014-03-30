@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Anagram
 {
@@ -25,35 +27,45 @@ public class Anagram
 	{
 		int casos=Integer.parseInt(br.readLine());
 
-		StringBuffer out=new StringBuffer("");
 		while(casos--!=0)
 		{
-			char[] m=br.readLine().toCharArray();
-			Arrays.sort(m);
-			StringBuilder s=new StringBuilder("");
-            for(int j=0;j<m.length;j++){
-                s.append(m[j]);
-            }
-			perm(new StringBuilder(""),s,out);
-			System.out.print(out);
+			char[] x=br.readLine().toCharArray();
+			Arrays.sort(x);
+			
+			Set<String> pals=new HashSet<String>();
+			do
+			{
+				if(pals.add(new String(x))) System.out.println(x);
+			}
+			while(nextPermutation(x));
 		}
 	}
+	
+	private static boolean nextPermutation(char[] array)
+	{
+		int i=array.length-1;
+		while(i>0 && array[i-1]>=array[i]) i--;
 
-	static void perm(StringBuilder pre ,StringBuilder s,StringBuffer out) {
-        if (s.length() == 0) {
-            out.append(pre).append("\n");
-        }else{
-        for (int i = 0; i < s.length(); i++) {
-             if(i<s.length()-1){
-                 if(s.charAt(i)==s.charAt(i+1)){
-                     continue;
-                 }
-             }
-             perm(new StringBuilder("").append(pre).append(s.charAt(i)), new StringBuilder("").append(s.substring(0, i)).append(s.substring(i+1, s.length())),
-                     out);
-             }
-        }
-      
-    }
+		if(i==0) return false;
+
+		int j=array.length-1;
+		while (array[j]<=array[i-1]) j--;
+
+		char temp=array[i-1];
+		array[i-1] = array[j];
+		array[j] = temp;
+
+		j=array.length-1;
+		while(i<j) 
+		{
+			temp=array[i];
+			array[i]=array[j];
+			array[j]=temp;
+			i++;
+			j--;
+		}
+
+		return true;
+	}
 
 }
